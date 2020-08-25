@@ -1,79 +1,46 @@
-import React from 'react';
+import React, { Component } from "react";
 
 import MyProfile from './MyProfile';
 import DATA from '../data/employeeData';
 
 class EditProfile extends React.Component {
-
-  /*constructor(props){
-    super(props);
-
-    this.state = {
-      name: MyProfile.name,
-      email: MyProfile.email,
-      phoneNumber: MyProfile.phoneNumber,
-      address: MyProfile.address,
-      dateOfBirth: MyProfile.dateOfBirth,
-      dateOfEmployment: MyProfile.dateOfEmployment,
-      position: MyProfile.position,
-      numberOfVacationDays: MyProfile.numberOfVacationDays
-    }
-  }
-  
-*/
-
-    render() {
-      return (
-        <div>
-          <h1>Edit Profile</h1>
-          <form>
-            <label for="name">Edit Name: </label>
-            <input type="text" />
-          </form>
+  render() {
+    return(
+      <div>
+        <h1>Edit profile info</h1>
+        <form>
+          <label for="name">Edit name:</label>
+          <input type="text" id="name" />
           <br />
-          <form>
-            <label for="email">Edit Email: </label>
-            <input type="email" />
-          </form>
+          <label for="email">Edit email:</label>
+          <input type="email" id="email" />
           <br />
-          <form>
-            <label for="phoneNum">Edit Phone Number: </label>
-            <input type="text" />
-          </form>
+          <label for="phoneNum">Edit phone number:</label>
+          <input type="text" id="phoneNum" />
           <br />
-          <form>
-            <label for="address">Edit Address: </label>
-            <input type="text" />
-          </form>
+          <label for="address">Edit address:</label>
+          <input type="text" id="address" />
           <br />
-          <form>
-            <label for="dateB">Edit Date Of Birth: </label>
-            <input type="date" />
-          </form>
+          <label for="dateB">Edit date of birth:</label>
+          <input type="date" id="dateB" />
           <br />
-          <form>
-            <label for="dateE">Edit Date Of Employment: </label>
-            <input type="date" />
-          </form>
+          <label for="dateE">Edit date of employment:</label>
+          <input type="text" id="name" />
           <br />
-          <form>
-            <label for="position">Edit Position: </label>
-            <input type="text" />
-          </form>
+          <label for="position">Edit position:</label>
+          <input type="text" id="position" />
           <br />
-          <form>
-            <label for="numVac">Edit Number Of Vacation Days: </label>
-            <input type="number" />
-          </form>
+          <label for="numV">Edit number of vacation days:</label>
+          <input type="number" id="numV" />
           <br />
-          <form action="profile">
-            <button /*onClick={}*/>
+          <form action="/profile">
+            <button>
               SUBMIT
             </button>
           </form>
-        </div>
-      );
-    }
+        </form>
+      </div>
+    )
   }
-  
-  export default EditProfile;
+}
+export default EditProfile;

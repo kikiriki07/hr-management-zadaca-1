@@ -1,46 +1,70 @@
-import React, { Component } from "react";
+import React from 'react';
 
-import MyProfile from './MyProfile';
+import '../style/EditProfile.css';
+
 import DATA from '../data/employeeData';
 
 class EditProfile extends React.Component {
+  constructor() {
+    super();
+
+    this.state ={
+      name: DATA.Name,
+      email: DATA.Email,
+      phoneNumber: DATA.PhoneNumber,
+      address: DATA.Address,
+      dateOfBirth: DATA.DateOfBirth,
+      dateOfEmployment: DATA.DateOfEmployment,
+      position: DATA.Position,
+      numberOfVacationDays: DATA.NumberOfVacationDays
+    };
+  }
+
+  handleEditBtnClick = () => {
+    this.setState((oldState) => ({...oldState, ...this.state.name}))
+  }
+
+  handleFormSubmission = (e) => {
+    e.preventDefault();
+    this.state.name = e.value;
+  }
+
   render() {
-    return(
-      <div>
-        <h1>Edit profile info</h1>
-        <form>
-          <label for="name">Edit name:</label>
-          <input type="text" id="name" />
-          <br />
-          <label for="email">Edit email:</label>
-          <input type="email" id="email" />
-          <br />
-          <label for="phoneNum">Edit phone number:</label>
-          <input type="text" id="phoneNum" />
-          <br />
-          <label for="address">Edit address:</label>
-          <input type="text" id="address" />
-          <br />
-          <label for="dateB">Edit date of birth:</label>
-          <input type="date" id="dateB" />
-          <br />
-          <label for="dateE">Edit date of employment:</label>
-          <input type="text" id="name" />
-          <br />
-          <label for="position">Edit position:</label>
-          <input type="text" id="position" />
-          <br />
-          <label for="numV">Edit number of vacation days:</label>
-          <input type="number" id="numV" />
-          <br />
-          <form action="/profile">
-            <button>
-              SUBMIT
-            </button>
-          </form>
-        </form>
+    return (
+      <div className="edit-profile">
+        <p>Edit Profile</p>
+        <div className="inputs">
+        <h3>
+          <button onClick={this.handleEditBtnClick} label="Edit">EDIT</button>
+        </h3> <br />
+        <h4>
+          Name: <input type="text" value={this.state.name} /> 
+        </h4> <br />
+        <h4>
+          Email: <input type="email" value={this.state.email} /> 
+        </h4> <br />
+        <h4>
+          Phone Number: <input type="text" value={this.state.phoneNumber} /> 
+        </h4> <br />
+        <h4>
+          Address: <input type="text" value={this.state.address} /> 
+        </h4> <br />
+        <h4>
+          Date of birth: <input type="date" value={this.state.dateOfBirth} /> 
+        </h4> <br />
+        <h4>
+          Date of employment: <input type="date" value={this.state.dateOfEmployment} /> 
+        </h4> <br />
+        <h4>
+          Position: <input type="text" value={this.state.position} /> 
+        </h4> <br />
+        <h3>
+          <button type="submit" onClick={this.handleFormSubmission} label="Submit">SUBMIT</button>
+        </h3>
+        </div>
       </div>
-    )
+    );
   }
 }
+
 export default EditProfile;

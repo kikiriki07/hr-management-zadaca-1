@@ -58,6 +58,9 @@ class EditProfile extends React.Component {
         <h4>
           Position: <input type="text" value={this.state.position} /> 
         </h4> <br />
+        <h4>
+          Number of vacation days: <input type="text" value={this.state.numberOfVacationDays} /> 
+        </h4> <br />
         <h3>
           <button type="submit" onClick={this.handleFormSubmission} label="Submit">SUBMIT</button>
         </h3>
